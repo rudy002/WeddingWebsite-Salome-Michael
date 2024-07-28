@@ -1,0 +1,143 @@
+@import 'https://fonts.googleapis.com/css?family=Share+Tech+Mono';
+
+
+.App {
+  text-align: center;
+  width: 100%;
+}
+
+.App-header {
+  background-color: #80bcbd;
+  padding-top: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Great Vibes';
+  font-size: 6vh;
+  color: white;
+}
+
+.images-carousel {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 1vh;
+}
+
+.App-logo,
+.photo-side {
+  height: 40%;
+  width: 40%;
+  padding: 0;
+}
+
+.App-logo {
+  height: 379.97px;
+}
+
+.component-container {
+  margin-bottom: 25px;
+  padding: 0px;
+}
+
+.style-line {
+  height: 30px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+hr.style-line:before {
+  display: block;
+  content: '';
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
+.validateButton-popup {
+  margin-top: 20px;
+}
+
+.phone-found {
+  color: green;
+  font-weight: bold;
+}
+
+.phone-not-found {
+  color: red;
+  font-weight: bold;
+}
+
+.flag-icon {
+  width: 7%;
+  padding: 0%;
+  margin: 1%;
+}
+
+.button-language {
+  margin-right: 8px; /* Ajuste cet espace si nécessaire */
+}
+
+.span-language {
+  display: flex;
+  align-items: center; /* Assure que le texte et l'image sont alignés verticalement */
+  gap: 4px;
+}
+
+.formControlLabel-language {
+  display: flex;
+  align-items: center; /* Assure que les éléments sont centrés verticalement */
+  gap: 8px;
+}
+
+.footer {
+  background-color: #80bcbd;
+  padding-top: 4vh;
+  padding-bottom: 1vh;
+  margin-top: 1vh;
+  
+}
+
+.divider {
+  margin: 0px;
+  width: 50%;
+  padding: 0px;
+}
+
+.wedding-divider {
+  box-sizing: border-box;
+  margin: 2px;
+  font-family: "Share Tech Mono", monospace;
+  color: #333; /* Changez cela selon votre thème de mariage */
+  font-size: 4vh; /* Ajustez la taille de la police selon vos besoins */
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0; /* Ajouter un peu de marge au-dessus et en dessous */
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    height: 0.09em;
+    min-width: 15vw;
+  }
+  &::before {
+    background: linear-gradient(to right, rgba(240,240,240,0), #333); /* Changez cela selon votre thème de mariage */
+    margin-right: 2vh; /* Ajustez l'espace entre la ligne et le texte */
+    border-radius: 50%;
+  }
+
+  &::after {
+    background: linear-gradient(to left, rgba(240,240,240,0), #333); /* Changez cela selon votre thème de mariage */
+    margin-left: 2vh; /* Ajustez l'espace entre la ligne et le texte */
+  } 
+}

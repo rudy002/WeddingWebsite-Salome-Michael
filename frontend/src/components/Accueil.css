@@ -1,0 +1,39 @@
+.Accueil {
+    
+    justify-content: space-between; /* Répartit l'espace entre les éléments */
+    align-items: left;
+    font-family: Montserrat, sans-serif;
+
+  }
+
+  .parents {
+    display: flex;
+  }
+  
+  .container-parent {
+    /* Styles pour les conteneurs enfants */
+    width: 60%; /* Largeur des conteneurs enfants */
+    
+  }
+
+  .introduction {
+
+  }
+
+  .wedding-name {
+    font-weight: normal;
+    font-family: "Great Vibes";
+    font-size: 7vh;
+  }
+
+  .grandparents {
+    display: flex;
+    font-family: "Playfair-Display" ;
+  }
+
+  .container-grandparents {
+    width: 60%;
+  }
+
+  
+  
