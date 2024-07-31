@@ -24,7 +24,7 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/data'); // Endpoint sur votre backend
+      const response = await axios.get('https://wedding-salome-michael.onrender.com/api/data'); // Endpoint sur votre backend
       setData(response.data);
     } catch (error) {
       console.error(error);
@@ -64,7 +64,7 @@ function App() {
 
       // Faites une requête HTTP get vers votre backend pour vérifier le numéro de téléphone
       const response = await axios.get(
-        `http://localhost:5001/api/check-phone?phoneNumber=${phoneNumber}`
+        `https://wedding-salome-michael.onrender.com/api/check-phone?phoneNumber=${phoneNumber}`
       );
 
       // Vérifiez la réponse de votre backend

@@ -32,7 +32,7 @@ function WeddingForm(props) {
   const handleSubmit = async () => {
     try {
       const response = await axios.patch(
-        'http://localhost:5001/api/update-record',
+        'https://wedding-salome-michael.onrender.com/api/update-record',
         {
           recordId: userDetails.recordId,
           invitePresentHenne: invitePresentHenne, // Modifier le nom du champ
