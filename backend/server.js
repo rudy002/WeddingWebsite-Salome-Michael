@@ -5,7 +5,7 @@ require('dotenv').config();
 const router = require('./routes');
 const cors = require('cors');
 
-const allowedOrigins = ['http://localhost:3000', 'https://sage-lokum-3f7c33.netlify.app'];
+const allowedOrigins = ['http://localhost:3000', 'https://sage-lokum-3f7c33.netlify.app',   'https://salome-michael.com'];
 
 const corsOptions = {
   origin: function (origin, callback) {
