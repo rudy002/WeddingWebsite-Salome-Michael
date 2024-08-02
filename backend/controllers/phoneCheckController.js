@@ -34,7 +34,6 @@ const checkPhone = async (req, res) => {
             // Si le numéro de téléphone n'est pas trouvé, ajoutez un nouvel enregistrement
             console.log('Numéro de téléphone non trouvé, ajout d\'un nouvel enregistrement');
 
-            const createResponse = await axios.post(`https://api.airtable.com/v0/app47u6kE9RFEe6Ke/tblQ7UzdcK7JneN5A`, 
             
             res.json({ found: false, message: 'Numéro de téléphone non trouvé, nouvel enregistrement créé', user: newRecord.fields });
         }
