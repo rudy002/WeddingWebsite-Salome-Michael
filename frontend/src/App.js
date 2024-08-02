@@ -79,7 +79,6 @@ function App() {
 
         // Mettre à jour les détails de l'utilisateur avec les données reçues
         setUserDetails(data.user);
-
         // Fermez la popup
         handleClosePopUp();
       } else {
@@ -88,11 +87,8 @@ function App() {
         setExistingPhone(false); // Assurez-vous de mettre à jour existingPhone à false
       }
     } catch (error) {
-      console.error(
-        "Une erreur s'est produite lors de la vérification du numéro de téléphone :",
-        error
-      );
-      // Ajoutez ici la logique pour gérer les erreurs de requête
+      console.error("Une erreur s'est produite lors de la vérification du numéro de téléphone :",error);
+      setExistingPhone(false);
     } finally {
       setLoading(false); // Désactiver le chargement une fois la requête terminée (succès ou échec)
     }

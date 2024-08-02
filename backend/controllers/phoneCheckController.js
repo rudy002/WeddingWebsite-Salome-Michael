@@ -35,7 +35,7 @@ const checkPhone = async (req, res) => {
             console.log('Numéro de téléphone non trouvé, ajout d\'un nouvel enregistrement');
 
             
-            res.json({ found: false, message: 'Numéro de téléphone non trouvé, nouvel enregistrement créé', user: newRecord.fields });
+            res.json({ found: false, message: 'Numéro de téléphone non trouvé' });
         }
 
     } catch (error) {
