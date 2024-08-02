@@ -23,7 +23,7 @@
   .wedding-name {
     font-weight: normal;
     font-family: "Great Vibes";
-    font-size: 7vh;
+    font-size: 8vh;
   }
 
   .grandparents {
@@ -35,5 +35,23 @@
     width: 60%;
   }
 
+  @media (max-width: 768px) {
+    .Accueils {
+      /* Ajustez le style pour les écrans plus petits */
+      font-size: 16px; /* Taille de la police adaptée pour les petits écrans */
+    }
+  
+    .container-parent, .container-grandparents {
+      width: 90%; /* Augmentez la largeur pour les petits écrans */
+    }
+  
+    .wedding-name {
+      font-size: 6vh; /* Réduit la taille de la police pour les petits écrans */
+    }
+  
+    .parents, .grandparents {
+      flex-direction: column; /* Change l'orientation des flexbox pour les petits écrans */
+    }
+  }
   
   

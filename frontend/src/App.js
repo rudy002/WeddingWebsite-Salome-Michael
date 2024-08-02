@@ -33,7 +33,7 @@ function App() {
     }
   };
 
-  const [showPopUp, setShowPopUp] = useState(true);
+  const [showPopUp, setShowPopUp] = useState(false);
   const [phoneNumber, setPhoneNumber] = React.useState('');
   const [existingPhone, setExistingPhone] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
@@ -189,7 +189,6 @@ function App() {
 
       <div className="main">
         <Accueil lang={lang} />
-        <div class="wedding-divider">אנו מודים לאלוהים על יום זה</div>
         <Dashboard lang={lang} userDetails={userDetails} />
       </div>
       <div className="footer"> © Crafted by Rudy Haddad </div>
