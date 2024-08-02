@@ -12,9 +12,11 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import PopUp from './components/PopUp';
 import TextField from '@mui/material/TextField';
 import LoadingButton from '@mui/lab/LoadingButton';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 import axios from 'axios';
 import { useEffect } from 'react';
+
 
 function App() {
   const [data, setData] = useState([]);
@@ -160,40 +162,7 @@ function App() {
                 ml: 10,
               }}
             >
-              <FormControlLabel
-                className="formControlLabel-language"
-                control={
-                  <Switch
-                    checked={lang === 'he'}
-                    onChange={toggleLanguage}
-                    className="button-language"
-                  />
-                }
-                label={
-                  <span className="span-language">
-                    {lang === 'he' ? (
-                      <>
-                        <img
-                          src="/images/israel-flag.png
-                          "
-                          alt="Israeli Flag"
-                          className="flag-icon"
-                        />{' '}
-                        עברית
-                      </>
-                    ) : (
-                      <>
-                        <img
-                          src="/images/france-flag.png"
-                          alt="French Flag"
-                          className="flag-icon"
-                        />{' '}
-                        Français
-                      </>
-                    )}
-                  </span>
-                }
-              />
+              < LanguageSwitcher lang={lang} setLang={setLang} />
             </FormGroup>
           </div>
         </ThemeProvider>
