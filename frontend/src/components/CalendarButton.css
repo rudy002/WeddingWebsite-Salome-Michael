@@ -1,0 +1,12 @@
+/* Style général du bouton */
+.CalendarButton {
+    margin-left: 8px; /* Ajout d'une marge à gauche */
+  }
+  
+  /* Marges spécifiques aux petits écrans */
+  @media screen and (max-width: 768px) {
+    .CalendarButton {
+      margin-top: 15px; /* Ajustez la valeur selon vos besoins */
+    }
+  }
+  
