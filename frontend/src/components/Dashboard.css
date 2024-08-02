@@ -5,32 +5,22 @@
 
 }
 
+.ButtonGroup {
+  display: flex;
+  flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+  gap: 1px; /* Espacement entre les éléments */
+  justify-content: center; /* Centre les éléments horizontalement */
+}
+
+.ButtonGroup .MuiButton-root {
+  flex: 1 1 auto; /* Les boutons s'ajustent à l'espace disponible */
+  min-width: 120px; /* Définir une largeur minimale pour les boutons */
+  margin: 0; /* Ajustez les marges si nécessaire */
+}
+
 .tab-name {
 
-  appearance: none;
-  background-color: #80BCBD;
-  border: 1px solid rgba(27, 31, 35, .15);
-  border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
-  font-size: 25px;
-  font-weight: 700;
-  line-height: 20px;
-  padding: 6px 16px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  white-space: nowrap;
-  margin-left: 3vh;
-  margin-right: 3vh;
+  
 }
 
 @media screen and (max-width: 768px) {
@@ -38,6 +28,13 @@
     font-size: 1.8em; /* Ajustement de la taille de police pour les écrans plus petits */
     padding: 10px 20px; /* Ajustement de l'espacement pour les écrans plus petits */
     margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .ButtonGroup .MuiButton-root {
+    font-size: 1.5em; /* Ajustez la taille de la police pour les petits écrans */
+    padding: 8px 16px; /* Ajustez l'espacement interne des boutons */
   }
 }
 

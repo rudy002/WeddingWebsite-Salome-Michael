@@ -33,7 +33,7 @@ function App() {
     }
   };
 
-  const [showPopUp, setShowPopUp] = useState(false);
+  const [showPopUp, setShowPopUp] = useState(true);
   const [phoneNumber, setPhoneNumber] = React.useState('');
   const [existingPhone, setExistingPhone] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
