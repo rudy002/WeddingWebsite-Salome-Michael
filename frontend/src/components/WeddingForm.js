@@ -44,7 +44,7 @@ function WeddingForm(props) {
 
       console.log('ici cest response.data : ' + response.data);
 
-      setMessage(response.data.message);
+      setMessage('');
     } catch (error) {
       console.error(error);
       setMessage(
@@ -133,7 +133,7 @@ function WeddingForm(props) {
           multiline
           rows={4}
           variant="outlined"
-          value={message}
+          value = {message}
           onChange={(event) => setMessage(event.target.value)}
         />
       </div>
