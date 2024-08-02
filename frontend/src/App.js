@@ -35,7 +35,7 @@ function App() {
 
   const [showPopUp, setShowPopUp] = useState(true);
   const [phoneNumber, setPhoneNumber] = React.useState('');
-  const [existingPhone, setExistingPhone] = React.useState(null);
+  const [existingPhone, setExistingPhone] = useState(null);
   const [loading, setLoading] = React.useState(false);
   const [userDetails, setUserDetails] = useState(null);
 
@@ -84,7 +84,8 @@ function App() {
         handleClosePopUp();
       } else {
         console.log('Numéro de téléphone non trouvé :', data.message);
-        // Ajoutez ici la logique pour gérer le cas où le numéro de téléphone n'est pas trouvé
+        
+        setExistingPhone(false); // Assurez-vous de mettre à jour existingPhone à false
       }
     } catch (error) {
       console.error(
