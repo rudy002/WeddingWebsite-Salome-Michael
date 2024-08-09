@@ -6,7 +6,8 @@ const translations = {
       buttonChabbat: 'Chabbat Hattan',
       buttonResponse: 'Réponse',
       buttonPhotos: ' Photos et Vidéos',
-      
+
+      welcome: 'Bonjour',
       parentNameHaddad : 'Nina & Alain Haddad',
       grandParentHaddad: 'Max & Gisèle Ainouze',
       parentNameBatach: 'Nazi & Menache Batachvili',
@@ -62,6 +63,7 @@ const translations = {
         buttonResponse: 'תשובה',
         buttonPhotos: ' תמונות וסרטונים',
 
+        welcome: 'שלום',
         parentNameHaddad : 'נינב ואלן חדד',
         grandParentHaddad: 'מקס וגי״זל איינוז',
         parentNameBatach: 'נזי ומנשה בטשווילי',

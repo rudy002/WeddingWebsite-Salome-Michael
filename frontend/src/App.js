@@ -185,7 +185,7 @@ function App() {
       )}
 
       <div className="main">
-        <Accueil lang={lang} />
+        <Accueil lang={lang} userDetails={userDetails} />
         <Dashboard lang={lang} userDetails={userDetails} />
       </div>
       <div className="footer"> © Crafted by Rudy Haddad </div>

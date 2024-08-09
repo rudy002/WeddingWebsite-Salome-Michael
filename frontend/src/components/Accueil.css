@@ -1,13 +1,19 @@
 .Accueil {
     
     justify-content: space-between; /* Répartit l'espace entre les éléments */
-    align-items: left;
+    align-items: center;
     font-family: Montserrat, sans-serif;
 
   }
 
   .parents {
     display: flex;
+  }
+
+  .divider {
+    border-top: 1px solid #000; /* Couleur de la ligne */
+    width: 80%; /* Largeur de la ligne de séparation */
+    margin: 20px auto; /* Centre la ligne horizontalement */
   }
   
   .container-parent {
