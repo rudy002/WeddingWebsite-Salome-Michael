@@ -36,6 +36,8 @@ const translations = {
       guestFamilyName: 'Nom',
       messageThanks: 'Message pour les mariés ❤️❤️',
       phone: 'Numéro de téléphone',
+      successMessage: 'Votre réponse a bien été enregistrée. Merci !',
+      failedMessage : 'Une erreur s\'est produite lors de l\'enregistrement de votre réponse. Veuillez réessayer plus tard ou contacter un proche.',
 
       textPhotos1 : 'Vous avez de superbe photos et vidéos ?',
       textPhotos2 : 'Partagez les avec nous ! 😍😍',
@@ -87,6 +89,8 @@ const translations = {
         guestFamilyName: 'שם משפחה',
         messageThanks: 'הודעה לחתן והכלה ❤️❤️',
         phone: 'מספר טלפון',
+        successMessage: 'התשובה שלך נרשמה בהצלחה. תודה !',
+        failedMessage : 'אירעה שגיאה בעת רישום התשובה שלך. אנא נסה שוב מאוחר יותר או צור קשר עם קרוב.',
 
         textPhotos1 : 'יש לך תמונות וסרטונים מדהימים?',
         textPhotos2 : 'שתף אותם איתנו! 😍😍',

@@ -6,10 +6,12 @@ import MenuItem from '@mui/material/MenuItem';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Button from '@mui/material/Button';
 import axios from 'axios';
 import translations from '../translation';
 import LoadingButton from '@mui/lab/LoadingButton';
+
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 function WeddingForm(props) {
   const { lang, userDetails } = props;
@@ -20,6 +22,11 @@ function WeddingForm(props) {
   const [message, setMessage] = React.useState(''); // État pour le message
   const [willAttend, setWillAttend] = React.useState('oui'); // État pour la réponse à "Est-ce que vous viendrez ?"
   const [isLoading, setIsLoading] = React.useState(false);
+
+  //pour le success de la validation
+const [openSnackbar, setOpenSnackbar] = React.useState(false);
+const [snackbarMessage, setSnackbarMessage] = React.useState('');
+
 
   const handleInvitePresentHouppaChange = (event) => {
     setInvitePresentHouppa(event.target.value);
@@ -57,11 +64,13 @@ function WeddingForm(props) {
         }
       );
 
-      console.log('ici cest response.data : ' + response.data);
-
+      setSnackbarMessage(translations[lang].successMessage);
+      setOpenSnackbar(true);
       setMessage('');
     } catch (error) {
       console.error(error);
+      setSnackbarMessage(translations[lang].failedMessage);
+      setOpenSnackbar(true);
       setMessage(
         "Une erreur s'est produite lors de la mise à jour de l'enregistrement."
       );
@@ -184,6 +193,17 @@ function WeddingForm(props) {
       >
         {translations[lang].validation}
       </LoadingButton>
+
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={() => setOpenSnackbar(false)}
+      >
+        <Alert onClose={() => setOpenSnackbar(false)} severity={snackbarMessage.includes('erreur') ? 'error' : 'success'}>
+          
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }
