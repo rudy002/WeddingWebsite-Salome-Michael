@@ -42,6 +42,8 @@ const translations = {
 
       calendar: 'ajouter à mon calendrier',
 
+      validation: 'Valider',
+
 
 
 
@@ -90,6 +92,8 @@ const translations = {
         textPhotos2 : 'שתף אותם איתנו! 😍😍',
 
         calendar: 'הוסף ליומן שנה',
+
+        validation: 'אישור',
 
 
 

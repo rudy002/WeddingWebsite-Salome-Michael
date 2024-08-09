@@ -9,6 +9,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import axios from 'axios';
 import translations from '../translation';
+import LoadingButton from '@mui/lab/LoadingButton';
 
 function WeddingForm(props) {
   const { lang, userDetails } = props;
@@ -18,6 +19,7 @@ function WeddingForm(props) {
   const [invitePresentChabbat, setInvitePresentChabbat] = React.useState(0);
   const [message, setMessage] = React.useState(''); // État pour le message
   const [willAttend, setWillAttend] = React.useState('oui'); // État pour la réponse à "Est-ce que vous viendrez ?"
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleInvitePresentHouppaChange = (event) => {
     setInvitePresentHouppa(event.target.value);
@@ -42,6 +44,7 @@ function WeddingForm(props) {
   };
 
   const handleSubmit = async () => {
+    setIsLoading(true);
     try {
       const response = await axios.patch(
         'https://wedding-salome-michael.onrender.com/api/update-record',
@@ -62,6 +65,8 @@ function WeddingForm(props) {
       setMessage(
         "Une erreur s'est produite lors de la mise à jour de l'enregistrement."
       );
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -168,9 +173,16 @@ function WeddingForm(props) {
           onChange={(event) => setMessage(event.target.value)}
         />
       </div>
-      <Button variant="contained" color="primary" onClick={handleSubmit}>
-        Valider
-      </Button>
+      <LoadingButton
+        variant='contained'
+        color='primary'
+        onClick={handleSubmit}
+        loading={isLoading}
+        loadingPosition="center"
+      
+      >
+        {translations[lang].validation}
+      </LoadingButton>
     </Box>
   );
 }
