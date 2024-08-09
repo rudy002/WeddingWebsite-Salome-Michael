@@ -71,7 +71,6 @@ function App() {
 
       // Vérifiez la réponse de votre backend
       const data = response.data;
-      console.log('Réponse du serveur :', data);
       setExistingPhone(data.found);
 
       if (response.status === 200 && data.found) {
