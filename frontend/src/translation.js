@@ -26,6 +26,9 @@ const translations = {
       hourHenne: 'à 20 heures 30 précises',
       placeHenne: 'à Sapan\'s Love Ashdod, Israël',
 
+      willAttend: 'Serez-vous présent à l\'événement ?',
+      responseYES: 'Oui',
+      responseNO: 'Non',
       nbInviteHouppa: 'Nombre d\'invités présents à la Houppa',
       nbInviteHenne: 'Nombre d\'invités présents au Henné',
       nbInviteChabbat: 'Nombre d\'invités présents au Chabbat',
@@ -72,6 +75,9 @@ const translations = {
         hourHenne: 'בשעה 20:30 בדיוק',
         placeHenne: 'אהובת הספן אשדוד, ישראל',
 
+        willAttend: 'האם תשתתף באירוע',
+        responseYES: 'כן',
+        responseNO: 'לא',
         nbInviteHouppa: 'מספר האורחים הנוכחים בחופה',
         nbInviteHenne: 'מספר האורחים הנוכחים בחנה',
         nbInviteChabbat: 'מספר האורחים הנוכחים בשבת',

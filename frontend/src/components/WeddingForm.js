@@ -3,19 +3,21 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
-import translations from '../translation';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import Button from '@mui/material/Button';
 import axios from 'axios';
+import translations from '../translation';
 
 function WeddingForm(props) {
   const { lang, userDetails } = props;
-
-  //deboguer
 
   const [invitePresentHouppa, setInvitePresentHouppa] = React.useState(0);
   const [invitePresentHenne, setInvitePresentHenne] = React.useState(0);
   const [invitePresentChabbat, setInvitePresentChabbat] = React.useState(0);
   const [message, setMessage] = React.useState(''); // État pour le message
+  const [willAttend, setWillAttend] = React.useState('oui'); // État pour la réponse à "Est-ce que vous viendrez ?"
 
   const handleInvitePresentHouppaChange = (event) => {
     setInvitePresentHouppa(event.target.value);
@@ -29,16 +31,26 @@ function WeddingForm(props) {
     setInvitePresentChabbat(event.target.value);
   };
 
+  const handleWillAttendChange = (event) => {
+    const value = event.target.value;
+    setWillAttend(value);
+    if (value === 'non') {
+      setInvitePresentHouppa(0);
+      setInvitePresentHenne(0);
+      setInvitePresentChabbat(0);
+    }
+  };
+
   const handleSubmit = async () => {
     try {
       const response = await axios.patch(
         'https://wedding-salome-michael.onrender.com/api/update-record',
         {
           recordId: userDetails.recordId,
-          invitePresentHenne: invitePresentHenne, // Modifier le nom du champ
-          invitePresentChabbat: invitePresentChabbat, // Modifier le nom du champ
-          invitePresentHouppa: invitePresentHouppa, // Modifier le nom du champ
-          MessageMarier: message, // Utiliser le message saisi dans le TextField
+          invitePresentHenne: invitePresentHenne,
+          invitePresentChabbat: invitePresentChabbat,
+          invitePresentHouppa: invitePresentHouppa,
+          MessageMarier: message,
         }
       );
 
@@ -64,6 +76,22 @@ function WeddingForm(props) {
     >
       <div>
         <div>
+          <label htmlFor="willAttend">
+            {translations[lang].willAttend}
+          </label>
+        <RadioGroup
+          aria-label="willAttend"
+          name="willAttend"
+          value={willAttend}
+          onChange={handleWillAttendChange}
+          row
+          sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}
+          >
+          <FormControlLabel value="oui" control={<Radio />} label={translations[lang].responseYES} />
+          <FormControlLabel value="non" control={<Radio />} label={translations[lang].responseNO} />
+        </RadioGroup>
+        </div>
+        <div>
           <label htmlFor="invitePresentHouppa">
             {translations[lang].nbInviteHouppa}{' '}
           </label>
@@ -73,6 +101,7 @@ function WeddingForm(props) {
             value={invitePresentHouppa}
             onChange={handleInvitePresentHouppaChange}
             label="Invité présent à la Houppa"
+            disabled={willAttend === 'non'}
             sx={{ mb: 2 }}
           >
             {[...Array(8).keys()].map((num) => (
@@ -94,6 +123,7 @@ function WeddingForm(props) {
               value={invitePresentHenne}
               onChange={handleInvitePresentHenneChange}
               label={translations[lang].nbInviteHenne}
+              disabled={willAttend === 'non'}
               sx={{ mb: 2 }}
             >
               {[...Array(8).keys()].map((num) => (
@@ -116,6 +146,7 @@ function WeddingForm(props) {
               value={invitePresentChabbat}
               onChange={handleInvitePresentChabbatChange}
               label="Invité présent au Chabbat"
+              disabled={willAttend === 'non'}
               sx={{ mb: 2 }}
             >
               {[...Array(8).keys()].map((num) => (
@@ -133,7 +164,7 @@ function WeddingForm(props) {
           multiline
           rows={4}
           variant="outlined"
-          value = {message}
+          value={message}
           onChange={(event) => setMessage(event.target.value)}
         />
       </div>
