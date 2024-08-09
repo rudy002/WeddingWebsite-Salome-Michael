@@ -21,8 +21,9 @@ function CalendarButton({ eventTitle, eventDetails, startTime, endTime }) {
             color="primary"
             startIcon={<CalendarIcon />}
             onClick={() => window.open(calendarUrl, '_blank')}
+            sx={{ml: 0.5}}
             >
-            Add to Calendar
+            Calendar
         </Button>
     );
 }

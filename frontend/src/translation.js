@@ -45,6 +45,8 @@ const translations = {
       calendar: 'ajouter à mon calendrier',
 
       validation: 'Valider',
+      waze : 'Ouvrir dans Waze',
+      calendrier : 'Ajouter à mon calendrier',
 
 
 
@@ -98,6 +100,8 @@ const translations = {
         calendar: 'הוסף ליומן שנה',
 
         validation: 'אישור',
+        waze : 'פתח בוויז',
+        calendrier : 'הוסף ליומן שנה',
 
 
 
