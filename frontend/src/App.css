@@ -16,7 +16,7 @@ html, body {
 }
 
 .App-header {
-  background-color: #dda15e;
+  background-color: #102C57;
   padding-top: 1vh;
   display: flex;
   flex-direction: column;
@@ -122,10 +122,11 @@ hr.style-line:before {
 }
 
 .footer {
-  background-color: #dda15e;
+  background-color: #102C57;
   padding-top: 4vh;
   padding-bottom: 1vh;
   margin-top: 1vh;
+  color: white;
   
 }
 
@@ -165,5 +166,6 @@ hr.style-line:before {
   &::after {
     background: linear-gradient(to left, rgba(240,240,240,0), #333); /* Changez cela selon votre thème de mariage */
     margin-left: 2vh; /* Ajustez l'espace entre la ligne et le texte */
+    
   } 
 }

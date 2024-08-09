@@ -30,7 +30,7 @@ function Dashboard(props) {
         <Box
           sx={{
             display: 'flex',
-            gap : '8px',
+            gap: '8px',
             flexDirection: 'column',
             alignItems: 'center',
             '& > *': {
@@ -38,32 +38,46 @@ function Dashboard(props) {
             },
           }}
         >
-          <ButtonGroup className="ButtonGroup" disableElevation size="large" aria-label="disable Large button group" variant='contained' color="primary">
-  <Button onClick={() => handleTabClick(1)} className="tab-name">
-    {translations[lang].buttonHouppa}
-  </Button>
+          <ButtonGroup
+            className="ButtonGroup"
+            disableElevation
+            size="large"
+            aria-label="disable Large button group"
+            variant="contained"
+            sx={{ 
+              '& .MuiButton-root': {
+                backgroundColor: '#1679ab',
+                color: 'white',
+                '&:hover': {
+                  backgroundColor: '#0f5d7e', // une couleur plus foncée pour l'état survolé
+                }
+              }
+            }}
+          >
+            <Button onClick={() => handleTabClick(1)} className="tab-name">
+              {translations[lang].buttonHouppa}
+            </Button>
 
-  {userDetails && userDetails.henne !== 0 && (
-    <Button onClick={() => handleTabClick(2)} className="tab-name">
-      {translations[lang].buttonHenne}
-    </Button>
-  )}
+            {userDetails && userDetails.henne !== 0 && (
+              <Button onClick={() => handleTabClick(2)} className="tab-name">
+                {translations[lang].buttonHenne}
+              </Button>
+            )}
 
-  {userDetails && userDetails.chabbat !== 0 && (
-    <Button onClick={() => handleTabClick(3)} className="tab-name">
-      {translations[lang].buttonChabbat}
-    </Button>
-  )}
+            {userDetails && userDetails.chabbat !== 0 && (
+              <Button onClick={() => handleTabClick(3)} className="tab-name">
+                {translations[lang].buttonChabbat}
+              </Button>
+            )}
 
-  <Button onClick={() => handleTabClick(4)} className="tab-name">
-    {translations[lang].buttonResponse}
-  </Button>
+            <Button onClick={() => handleTabClick(4)} className="tab-name">
+              {translations[lang].buttonResponse}
+            </Button>
 
-  <Button onClick={() => handleTabClick(5)} className="tab-name">
-    {translations[lang].buttonPhotos}
-  </Button>
-</ButtonGroup>
-
+            <Button onClick={() => handleTabClick(5)} className="tab-name">
+              {translations[lang].buttonPhotos}
+            </Button>
+          </ButtonGroup>
         </Box>
       </div>
 
