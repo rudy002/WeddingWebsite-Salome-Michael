@@ -179,6 +179,7 @@ function WeddingForm(props) {
         onClick={handleSubmit}
         loading={isLoading}
         loadingPosition="center"
+        
       
       >
         {translations[lang].validation}
