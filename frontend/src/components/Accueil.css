@@ -1,63 +1,69 @@
 .Accueil {
-    
-    justify-content: space-between; /* Répartit l'espace entre les éléments */
-    align-items: center;
-    font-family: Montserrat, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Montserrat, sans-serif;
+}
 
+.parents {
+  display: flex;
+  flex-direction: row; /* Alignement en ligne pour tous les écrans */
+  width: 100%; /* Utilisez la largeur entière disponible */
+  justify-content: space-around; /* Espacement égal entre les éléments */
+}
+
+.divider {
+  border-top: 1px solid #000; /* Couleur de la ligne */
+  width: 80%; /* Largeur de la ligne de séparation */
+  margin: 20px auto; /* Centre la ligne horizontalement */
+}
+
+.container-parent {
+  width: 30%; /* Ajustez selon la taille souhaitée pour les grands écrans */
+  margin: 0 10px; /* Espacement entre les éléments */
+}
+
+.introduction {
+  text-align: center; /* Centrez le texte */
+}
+
+.wedding-name {
+  font-weight: normal;
+  font-family: "Great Vibes";
+  font-size: 8vh;
+}
+
+.grandparents {
+  display: flex;
+  flex-direction: row; /* Alignement en ligne pour tous les écrans */
+  width: 100%; /* Utilisez la largeur entière disponible */
+  justify-content: space-around; /* Espacement égal entre les éléments */
+  font-family: "Playfair-Display";
+}
+
+.container-grandparents {
+  width: 30%; /* Ajustez selon la taille souhaitée pour les grands écrans */
+  margin: 0 10px; /* Espacement entre les éléments */
+}
+
+@media (max-width: 768px) {
+  .Accueils {
+      /* Ajustez le style pour les écrans plus petits */
+      font-size: 16px; /* Taille de la police adaptée pour les petits écrans */
   }
 
-  .parents {
-    display: flex;
-  }
-
-  .divider {
-    border-top: 1px solid #000; /* Couleur de la ligne */
-    width: 80%; /* Largeur de la ligne de séparation */
-    margin: 20px auto; /* Centre la ligne horizontalement */
-  }
-  
-  .container-parent {
-    /* Styles pour les conteneurs enfants */
-    width: 60%; /* Largeur des conteneurs enfants */
-    
-  }
-
-  .introduction {
-
+  .container-parent, .container-grandparents {
+      width: 30%; /* Gardez une largeur fixe pour l'affichage en ligne */
+      margin: 10px; /* Espacement entre les éléments en mode mobile */
   }
 
   .wedding-name {
-    font-weight: normal;
-    font-family: "Great Vibes";
-    font-size: 8vh;
-  }
-
-  .grandparents {
-    display: flex;
-    font-family: "Playfair-Display" ;
-  }
-
-  .container-grandparents {
-    width: 60%;
-  }
-
-  @media (max-width: 768px) {
-    .Accueils {
-      /* Ajustez le style pour les écrans plus petits */
-      font-size: 16px; /* Taille de la police adaptée pour les petits écrans */
-    }
-  
-    .container-parent, .container-grandparents {
-      width: 90%; /* Augmentez la largeur pour les petits écrans */
-    }
-  
-    .wedding-name {
       font-size: 6vh; /* Réduit la taille de la police pour les petits écrans */
-    }
-  
-    .parents, .grandparents {
-      flex-direction: column; /* Change l'orientation des flexbox pour les petits écrans */
-    }
   }
-  
-  
+
+  .parents, .grandparents {
+      /* Assurez-vous que les conteneurs sont alignés en ligne même sur les petits écrans */
+      flex-direction: row; /* Conservez l'alignement en ligne sur mobile */
+      justify-content: space-between; /* Espacement entre les éléments */
+  }
+}
