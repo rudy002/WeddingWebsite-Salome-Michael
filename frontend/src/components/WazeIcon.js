@@ -32,10 +32,10 @@ function WazeButton({ latitude, longitude }) {
       }
       onClick={() => window.open(wazeUrl, '_blank')}
       sx={{
-        backgroundColor: '#1679ab',
-        color: 'white',
+        backgroundColor: '#e3d5ca',
+        color: 'black',
         '&:hover': {
-          backgroundColor: '#0f5d7e', // couleur plus foncée pour l'état survolé
+          backgroundColor: '#d5bdaf', // couleur plus foncée pour l'état survolé
         },
       }}
     >

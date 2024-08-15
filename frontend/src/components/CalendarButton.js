@@ -23,11 +23,11 @@ function CalendarButton({ eventTitle, eventDetails, startTime, endTime }) {
       startIcon={<CalendarIcon />}
       onClick={() => window.open(calendarUrl, '_blank')}
       sx={{
-        backgroundColor: '#1679ab',
-        color: 'white',
+        backgroundColor: '#e3d5ca',
+        color: 'black',
         ml: 0.5,
         '&:hover': {
-          backgroundColor: '#0f5d7e', // couleur plus foncée pour l'état survolé
+          backgroundColor: '#d5bdaf', // couleur plus foncée pour l'état survolé
         },
       }}
     >
