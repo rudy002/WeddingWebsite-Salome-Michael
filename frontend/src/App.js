@@ -147,7 +147,7 @@ function App() {
       <header className="App-header">
         Salomé & Michael
         <br />
-        סלומה  &  מיכאל
+      
         <ThemeProvider theme={theme}>
           <div className="App">
             {/* Affichez le bouton Switch avec le texte correspondant à la langue actuelle */}

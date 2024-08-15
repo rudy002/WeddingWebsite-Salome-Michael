@@ -22,15 +22,15 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  minHeight: 80, // Hauteur minimale
-  minWidth: 80,  // Largeur minimale
+  minHeight: 60, // Hauteur minimale réduite
+  minWidth: 60,  // Largeur minimale réduite
   [theme.breakpoints.down('md')]: {
-    minHeight: 60,
-    minWidth: 60,
+    minHeight: 50, // Hauteur pour écrans moyens
+    minWidth: 50,
   },
   [theme.breakpoints.down('sm')]: {
-    minHeight: 50,
-    minWidth: 50,
+    minHeight: 40, // Hauteur pour petits écrans
+    minWidth: 40,
   },
   '&:hover, &.Mui-focusVisible': {
     zIndex: 1,
@@ -41,7 +41,7 @@ const ImageButton = styled(ButtonBase)(({ theme }) => ({
       opacity: 0,
     },
     '& .MuiTypography-root': {
-      border: '4px solid currentColor',
+      border: '3px solid currentColor', // Ajustement des bordures pour survol
     },
   },
 }));
@@ -55,7 +55,6 @@ const ImageSrc = styled('span')({
   backgroundSize: 'contain', // Ajuste l'image pour qu'elle soit entièrement visible
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
-  // Les dimensions de l'image sont déterminées par le conteneur
 });
 
 const Image = styled('span')(({ theme }) => ({
@@ -64,10 +63,10 @@ const Image = styled('span')(({ theme }) => ({
   justifyContent: 'center',
   color: theme.palette.common.white,
   [theme.breakpoints.down('md')]: {
-    fontSize: '0.75rem',
+    fontSize: '0.7rem', // Taille de police pour écrans moyens
   },
   [theme.breakpoints.down('sm')]: {
-    fontSize: '0.6rem',
+    fontSize: '0.5rem', // Taille de police pour petits écrans
   },
 }));
 
@@ -83,12 +82,12 @@ const ImageBackdrop = styled('span')(({ theme }) => ({
 }));
 
 const ImageMarked = styled('span')(({ theme }) => ({
-  height: 3,
-  width: 18,
+  height: 2, // Réduction de la hauteur de la marque
+  width: 14, // Réduction de la largeur de la marque
   backgroundColor: theme.palette.common.white,
   position: 'absolute',
   bottom: -2,
-  left: 'calc(50% - 9px)',
+  left: 'calc(50% - 7px)',
   transition: theme.transitions.create('opacity'),
 }));
 
@@ -104,7 +103,7 @@ export default function LanguageSwitcher({ lang, setLang }) {
         flexWrap: 'wrap',
         justifyContent: 'center',
         gap: 1,
-        minWidth: 300,
+        minWidth: 250, // Largeur minimale ajustée
         width: '100%',
       }}
     >
