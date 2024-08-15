@@ -46,10 +46,10 @@ function Dashboard(props) {
             variant="contained"
             sx={{ 
               '& .MuiButton-root': {
-                backgroundColor: '#1679ab',
-                color: 'white',
+                backgroundColor: '#e3d5ca',
+                color: 'black',
                 '&:hover': {
-                  backgroundColor: '#0f5d7e', // une couleur plus foncée pour l'état survolé
+                  backgroundColor: '#d5bdaf', // une couleur plus foncée pour l'état survolé
                 }
               }
             }}

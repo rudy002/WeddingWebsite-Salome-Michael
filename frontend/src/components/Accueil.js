@@ -49,6 +49,9 @@ function Accueil(props) {
       </div>
       
     </div>
+
+    <hr className="divider" />
+
     </div>
   );
 }
