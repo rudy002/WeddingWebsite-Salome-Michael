@@ -17,7 +17,6 @@ import LanguageSwitcher from './components/LanguageSwitcher';
 import axios from 'axios';
 import { useEffect } from 'react';
 
-
 function App() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -26,7 +25,9 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://wedding-salome-michael.onrender.com/api/data'); // Endpoint sur votre backend
+      const response = await axios.get(
+        'https://wedding-salome-michael.onrender.com/api/data'
+      ); // Endpoint sur votre backend
       setData(response.data);
     } catch (error) {
       console.error(error);
@@ -83,11 +84,14 @@ function App() {
         handleClosePopUp();
       } else {
         console.log('Numéro de téléphone non trouvé :', data.message);
-        
+
         setExistingPhone(false); // Assurez-vous de mettre à jour existingPhone à false
       }
     } catch (error) {
-      console.error("Une erreur s'est produite lors de la vérification du numéro de téléphone :",error);
+      console.error(
+        "Une erreur s'est produite lors de la vérification du numéro de téléphone :",
+        error
+      );
       setExistingPhone(false);
     } finally {
       setLoading(false); // Désactiver le chargement une fois la requête terminée (succès ou échec)
@@ -118,12 +122,31 @@ function App() {
             <TextField
               required
               id="phone"
-              label={translations[lang].phone}
+              label="phone/טלפון"
               variant="outlined"
               value={phoneNumber}
               onChange={handlePhoneNumberChange}
-              // Vous pouvez ajouter des règles de validation ici si nécessaire
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: '#b09c8b', // Couleur du contour plus foncée
+                  },
+                  '&:hover fieldset': {
+                    borderColor: '#b09c8b', // Couleur du contour lors du survol
+                  },
+                  '&.Mui-focused fieldset': {
+                    borderColor: '#b09c8b', // Couleur du contour lorsque le champ est focus
+                  },
+                },
+                '& .MuiInputLabel-root': {
+                  color: '#b09c8b', // Couleur du label plus foncée
+                  '&.Mui-focused': {
+                    color: '#b09c8b', // Couleur du label lorsqu'il est focus
+                  },
+                },
+              }}
             />
+
             {existingPhone !== null && (
               <p className={existingPhone ? 'phone-found' : 'phone-not-found'}>
                 {existingPhone
@@ -136,8 +159,14 @@ function App() {
             <LoadingButton
               loading={loading}
               variant="contained"
-              color="primary"
               onClick={handleSubmit}
+              sx={{
+                backgroundColor: '#e3d5ca',
+                color: 'black',
+                '&:hover': {
+                  backgroundColor: '#d5bdaf', // une couleur plus foncée pour l'état survolé
+                },
+              }}
             >
               <span>Submit</span>
             </LoadingButton>
@@ -147,7 +176,6 @@ function App() {
       <header className="App-header">
         Salomé & Michael
         <br />
-      
         <ThemeProvider theme={theme}>
           <div className="App">
             {/* Affichez le bouton Switch avec le texte correspondant à la langue actuelle */}
@@ -159,7 +187,7 @@ function App() {
                 ml: 10,
               }}
             >
-              < LanguageSwitcher lang={lang} setLang={setLang} />
+              <LanguageSwitcher lang={lang} setLang={setLang} />
             </FormGroup>
           </div>
         </ThemeProvider>

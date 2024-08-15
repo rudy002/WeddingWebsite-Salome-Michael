@@ -9,7 +9,6 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import axios from 'axios';
 import translations from '../translation';
 import LoadingButton from '@mui/lab/LoadingButton';
-
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
@@ -23,10 +22,8 @@ function WeddingForm(props) {
   const [willAttend, setWillAttend] = React.useState('oui'); // État pour la réponse à "Est-ce que vous viendrez ?"
   const [isLoading, setIsLoading] = React.useState(false);
 
-  //pour le success de la validation
-const [openSnackbar, setOpenSnackbar] = React.useState(false);
-const [snackbarMessage, setSnackbarMessage] = React.useState('');
-
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
+  const [snackbarMessage, setSnackbarMessage] = React.useState('');
 
   const handleInvitePresentHouppaChange = (event) => {
     setInvitePresentHouppa(event.target.value);
@@ -83,27 +80,108 @@ const [snackbarMessage, setSnackbarMessage] = React.useState('');
     <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
+        '& .MuiTextField-root': {
+          m: 1,
+          width: '25ch',
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: '#b09c8b', // Couleur du contour
+            },
+            '&:hover fieldset': {
+              borderColor: '#b09c8b', // Couleur du contour au survol
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#b09c8b', // Couleur du contour au focus
+            },
+          },
+          '& .MuiInputLabel-root': {
+            color: '#b09c8b', // Couleur du label
+            '&.Mui-focused': {
+              color: '#b09c8b', // Couleur du label au focus
+            },
+          },
+        },
+        '& .MuiSelect-root': {
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: '#b09c8b', // Couleur du contour
+            },
+            '&:hover fieldset': {
+              borderColor: '#b09c8b', // Couleur du contour au survol
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#b09c8b', // Couleur du contour au focus
+            },
+          },
+          '& .MuiInputLabel-root': {
+            color: '#b09c8b', // Couleur du label
+            '&.Mui-focused': {
+              color: '#b09c8b', // Couleur du label au focus
+            },
+          },
+        },
+        '& .MuiRadio-root': {
+          color: '#b09c8b', // Couleur des boutons radio
+          '&.Mui-checked': {
+            color: '#b09c8b', // Couleur des boutons radio sélectionnés
+          },
+        },
+        '& .MuiFormControlLabel-label': {
+          color: '#b09c8b', // Couleur des labels des boutons radio
+        },
+        '& .MuiLoadingButton-root': {
+          backgroundColor: '#b09c8b', // Couleur de fond du bouton
+          color: 'white',
+          '&:hover': {
+            backgroundColor: '#8c7b6a', // Couleur plus foncée au survol
+          },
+        },
       }}
       noValidate
       autoComplete="off"
     >
       <div>
         <div>
-          <label htmlFor="willAttend">
-            {translations[lang].willAttend}
-          </label>
-        <RadioGroup
-          aria-label="willAttend"
-          name="willAttend"
-          value={willAttend}
-          onChange={handleWillAttendChange}
-          row
-          sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}
+          <label htmlFor="willAttend">{translations[lang].willAttend}</label>
+          <RadioGroup
+            aria-label="willAttend"
+            name="willAttend"
+            value={willAttend}
+            onChange={handleWillAttendChange}
+            row
+            sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}
           >
-          <FormControlLabel value="oui" control={<Radio />} label={translations[lang].responseYES} />
-          <FormControlLabel value="non" control={<Radio />} label={translations[lang].responseNO} />
-        </RadioGroup>
+            <FormControlLabel
+              value="oui"
+              control={
+                <Radio
+                  sx={{
+                    color: '#b09c8b', // Couleur du bouton radio
+                    '&.Mui-checked': {
+                      color: '#b09c8b', // Couleur du bouton radio sélectionné
+                    },
+                  }}
+                />
+              }
+              label={translations[lang].responseYES}
+              sx={{ '& .MuiFormControlLabel-label': { color: 'black' } }} // Couleur du texte
+            />
+            <FormControlLabel
+              value="non"
+              control={
+                <Radio
+                  sx={{
+                    color: '#b09c8b', // Couleur du bouton radio
+                    '&.Mui-checked': {
+                      color: '#b09c8b', // Couleur du bouton radio sélectionné
+                    },
+                  }}
+                />
+              }
+              label={translations[lang].responseNO}
+              sx={{ '& .MuiFormControlLabel-label': { color: 'black' } }} // Couleur du texte
+            />
+          </RadioGroup>
         </div>
         <div>
           <label htmlFor="invitePresentHouppa">
@@ -183,13 +261,10 @@ const [snackbarMessage, setSnackbarMessage] = React.useState('');
         />
       </div>
       <LoadingButton
-        variant='contained'
-        color='primary'
+        variant="contained"
         onClick={handleSubmit}
         loading={isLoading}
         loadingPosition="center"
-        
-      
       >
         {translations[lang].validation}
       </LoadingButton>
@@ -199,8 +274,10 @@ const [snackbarMessage, setSnackbarMessage] = React.useState('');
         autoHideDuration={6000}
         onClose={() => setOpenSnackbar(false)}
       >
-        <Alert onClose={() => setOpenSnackbar(false)} severity={snackbarMessage.includes('erreur') ? 'error' : 'success'}>
-          
+        <Alert
+          onClose={() => setOpenSnackbar(false)}
+          severity={snackbarMessage.includes('erreur') ? 'error' : 'success'}
+        >
           {snackbarMessage}
         </Alert>
       </Snackbar>
