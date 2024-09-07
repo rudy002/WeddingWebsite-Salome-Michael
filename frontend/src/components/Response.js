@@ -6,7 +6,6 @@ function Response(props) {
 
   return (
     <div>
-      <h1>Response</h1>
         <WeddingForm lang={lang} userDetails={props.userDetails} />
     </div>
   );

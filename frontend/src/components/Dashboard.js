@@ -48,9 +48,10 @@ function Dashboard(props) {
               '& .MuiButton-root': {
                 backgroundColor: '#e3d5ca',
                 color: 'black',
+                boxShadow: 'none',
                 '&:hover': {
                   backgroundColor: '#d5bdaf', // une couleur plus foncée pour l'état survolé
-                }
+                },
               }
             }}
           >
