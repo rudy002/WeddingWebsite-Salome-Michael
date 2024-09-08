@@ -51,6 +51,7 @@ function Dashboard(props) {
                 minWidth: '150px',
                 width: '150px',
                 boxShadow: 'none',
+                border: 'none',
                 '&:hover': {
                   backgroundColor: '#d5bdaf', // une couleur plus foncée pour l'état survolé
                 },
