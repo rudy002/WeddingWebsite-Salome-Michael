@@ -53,6 +53,7 @@ function Dashboard(props) {
                 width: '150px',
                 boxShadow: 'none',
                 border: 'none',
+                 borderRadius: '8px',
                 '&:hover': {
                   backgroundColor: '#d5bdaf', // une couleur plus foncée pour l'état survolé
                 },
