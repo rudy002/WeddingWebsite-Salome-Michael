@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Dashboard.css';
 import Houppa from './Houppa.js';
 import Henne from './Henne.js';
+import Chabbat from './Chabbat.js';
 import Response from './Response.js';
 import translations from '../translation';
 import Photos from './Photos.js';
@@ -92,7 +93,7 @@ function Dashboard(props) {
       <div className="TabContent">
         {activeTab === 1 && <Houppa lang={props.lang} />}
         {activeTab === 2 && <Henne lang={props.lang} />}
-        {activeTab === 3 && <div>Contenu du Tab 3</div>}
+        {activeTab === 3 && <Chabbat lang={props.lang}/>}
         {activeTab === 4 && (
           <div>
             <Response lang={props.lang} userDetails={props.userDetails} />

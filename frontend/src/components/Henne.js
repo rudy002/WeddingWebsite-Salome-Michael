@@ -12,14 +12,35 @@ function Henne(props) {
 
   return (
     <div className="Henne">
-      <p>{translations[lang].introductionHenne}</p>
+      {/* <p>{translations[lang].introductionHenne}</p>
       <h1>{translations[lang].dateHenne}</h1>
       <h3>{translations[lang].dateHebrewHenne}</h3>
       <h3>{translations[lang].hourHenne}</h3>
       <h3 style={{ marginBottom: '5px' }}>
         {translations[lang].introPlaceHenne}
       </h3>
-      <h2 style={{ marginTop: '0' }}>{translations[lang].placeHenne}</h2>
+      <h2 style={{ marginTop: '0' }}>{translations[lang].placeHenne}</h2> */}
+
+      <div className="Henne-image">
+        {lang === 'fr' ? (
+          <img
+            src="/images/HenneFR.jpeg"
+            alt="Houppa en Français"
+            style={{
+              width: '98%',
+              maxWidth: '500px',
+              margin: '0 auto',
+              marginBottom: '2px',
+            }}
+          />
+        ) : (
+          <img
+            src="/images/HenneIL.jpeg"
+            alt="Houppa en Hébreu"
+            style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}
+          />
+        )}
+      </div>
 
       <WazeButton latitude={latitude} longitude={longitude} />
       <CalendarButton
