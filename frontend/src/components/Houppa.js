@@ -1,6 +1,7 @@
 import translations from '../translation';
 import WazeButton from './WazeIcon';
 import CalendarButton from './CalendarButton';
+import './Houppa.css';
 
 function Houppa(props) {
   const { lang } = props;
@@ -12,14 +13,30 @@ function Houppa(props) {
 
   return (
     <div className="Houppa">
-      <p>{translations[lang].houppaContent1}</p>
+      {/* <p>{translations[lang].houppaContent1}</p>
       <h1>{translations[lang].date}</h1>
       <h3>{translations[lang].dateHebrew}</h3>
       <h3>{translations[lang].hour1}</h3>
       <h3 style={{ marginBottom: '5px' }} className="placeHouppa">
         {translations[lang].introPLaceHouppa}
       </h3>
-      <h2 style={{ marginTop: '0' }}>{translations[lang].placeHouppa}</h2>
+      <h2 style={{ marginTop: '0' }}>{translations[lang].placeHouppa}</h2> */}
+
+      <div className="houppa-image">
+        {lang === 'fr' ? (
+          <img
+            src="/images/HouppaFR.jpeg"
+            alt="Houppa en Français"
+            style={{ width: '98%', maxWidth: '500px', margin: '0 auto' }}
+          />
+        ) : (
+          <img
+            src="/images/HouppaIL.jpeg"
+            alt="Houppa en Hébreu"
+            style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}
+          />
+        )}
+      </div>
 
       <WazeButton latitude={latitude} longitude={longitude} />
       <CalendarButton
